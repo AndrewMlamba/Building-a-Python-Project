@@ -1,12 +1,20 @@
 import unittest
 
+from math_fun import solve_me_first
 
-class SimpleTestCases(unittest.TestCase):
-    def test_five_plus_five(self):
-        assert 5 + 5 == 10
 
-    def test_one_plus_one(self):
-        assert not 1 + 1 == 3
+class MathFunTestCases(unittest.TestCase):
+    def test_correct_output(self):
+        num1 = 5
+        num2 = 5
+        result = solve_me_first(num1, num2)
+        self.assertEqual(result, 10)
+
+    def test_wrong_output(self):
+        num1 = 1
+        num2 = 1
+        result = solve_me_first(num1, num2)
+        self.assertNotEqual(result, 3)
 
 
 if __name__ == "__main__":
