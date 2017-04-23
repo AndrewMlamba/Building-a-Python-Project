@@ -10,3 +10,6 @@ script:
   - python -m unittest tests.py
 after_success:
   - coveralls
+branches:
+  only:
+    - master
