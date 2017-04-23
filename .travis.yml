@@ -8,6 +8,5 @@ install:
 # command to run tests
 script:
   - python -m unittest tests.py
-  - coverage run tests.py
 after_success:
   - coveralls
