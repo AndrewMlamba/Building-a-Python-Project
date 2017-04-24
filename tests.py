@@ -1,20 +1,24 @@
 import unittest
 
-from math_fun import solve_me_first
+from math_fun import Calculator
 
 
 class MathFunTestCases(unittest.TestCase):
-    def test_correct_output(self):
-        num1 = 5
-        num2 = 5
-        result = solve_me_first(num1, num2)
-        self.assertEqual(result, 10)
+    def setUp(self):
+        self.calc = Calculator()
 
-    def test_wrong_output(self):
-        num1 = 1
-        num2 = 1
-        result = solve_me_first(num1, num2)
-        self.assertNotEqual(result, 3)
+    def test_solve_me_first_returns_correct_result(self):
+        result = self.calc.solve_me_first(2, 2)
+        self.assertEqual(4, result)
+
+    def test_solve_me_first_returns_error_message_if_both_args_not_numbers(self):
+        self.assertRaises(ValueError, self.calc.solve_me_first, 'two', 'three')
+
+    def test_solve_me_first_returns_error_message_if_a_arg_not_number(self):
+        self.assertRaises(ValueError, self.calc.solve_me_first, 2, 'three')
+
+    def test_solve_me_first_returns_error_message_if_b_arg_not_number(self):
+        self.assertRaises(ValueError, self.calc.solve_me_first, 'two', 3)
 
 
 if __name__ == "__main__":
