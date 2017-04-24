@@ -9,7 +9,7 @@ class MathFunTestCases(unittest.TestCase):
 
     def test_solve_me_first_returns_correct_result(self):
         result = self.calc.solve_me_first(2, 2)
-        self.assertEqual(4, result)
+        self.assertEqual(result, 4)
 
     def test_solve_me_first_returns_error_message_if_both_args_not_numbers(self):
         self.assertRaises(ValueError, self.calc.solve_me_first, 'two', 'three')
